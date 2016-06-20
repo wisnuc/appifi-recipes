@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+
+var fs = require('fs')
+
+if (process.argv.length !== 3) {
+  console.log('requires exactly one argument')
+  process.exit(1)
+}
+
+var filename = process.argv[2]
+
+if (filename.indexOf('/') !== -1) {
+  console.log('no folder in path name allowed')
+  process.exit(1)
+}
+
+if (!filename.endsWith('.js')) {
+  console.log('filename must be suffixed by .js')
+}
+
+var obj
+
+try {
+  obj = require('./' + filename)
+}
+catch (e) {
+  console.log('error importing file, exit')
+  console.log(e)
+  process.exit(1)
+}
+
+var output = filename.slice(0, -3) + '.json'
+
+try {
+  let json = JSON.stringify(obj, null, '  ')
+  fs.writeFile('./' + filename.slice(0, -3) + '.json', json, function(err) {
+    if(err) {
+      console.log('error writing json to file')
+      console.log(e)
+      process.exit(1)
+    }
+    console.log('JSON saved to ' + output + '.')
+    process.exit(0)
+  })
+}
+catch (e) {
+  console.log('error translating object to JSON')
+  console.log(e)
+  process.exit(1)
+}
+
+
