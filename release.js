@@ -35,7 +35,7 @@ module.exports = [
             RestartPolicy: {
               Name: 'unless-stopped'
             },
-            PortBindings: { "22/tcp": [{ HostPort: "10086" }] },
+            PortBindings: { "80/tcp": [{ HostPort: "10086" }] },
             PublishAllPorts: true
           } 
         },
