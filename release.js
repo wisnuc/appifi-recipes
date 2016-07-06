@@ -31,6 +31,7 @@ module.exports = [
         overlay: true,
         config: {
           HostConfig: {
+            Binds: ["/var/www/html:/var/www/html"],
             RestartPolicy: {
               Name: 'unless-stopped'
             },
