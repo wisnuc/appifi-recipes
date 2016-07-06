@@ -41,7 +41,7 @@
                 }
               ]
             },
-            "PublishAllPorts": true
+            "PublishAllPorts": false
           }
         },
         "volumes": []
@@ -97,7 +97,7 @@
                 }
               ]
             },
-            "PublishAllPorts": true
+            "PublishAllPorts": false
           }
         },
         "volumes": []

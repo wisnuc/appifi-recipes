@@ -36,7 +36,7 @@ module.exports = [
               Name: 'unless-stopped'
             },
             PortBindings: { "80/tcp": [{ HostPort: "10086" }] },
-            PublishAllPorts: true
+            PublishAllPorts: false
           } 
         },
         volumes: []
@@ -176,7 +176,7 @@ module.exports = [
               Name: 'unless-stopped'
             },
             PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
-            PublishAllPorts: true
+            PublishAllPorts: false
           }
         },
         volumes: []
