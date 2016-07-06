@@ -102,11 +102,9 @@ module.exports = [
         overlay: true,
         config: {
           HostConfig: {
-            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
             RestartPolicy: {
               Name: 'unless-stopped'
             },
-            PortBindings: { "9091/tcp": [{ HostPort: "9091"}] },
             PublishAllPorts: true
           }
         },
@@ -173,9 +171,11 @@ module.exports = [
         overlay: true,
         config: {
           HostConfig: {
+            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
             RestartPolicy: {
               Name: 'unless-stopped'
             },
+            PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
             PublishAllPorts: true
           }
         },
