@@ -19,6 +19,31 @@ module.exports = [
     ]
   },
   {
+    appname: 'fruitmix',
+    flavor: 'vanilla',
+    components: [
+      {
+        name: 'fruitmix',
+        namespace: 'jiangweigithub',
+        imageLink: 'elasticsearch.png',
+        tag: 'latest',
+        repo: null,
+        overlay: true,
+        config: {
+          HostConfig: {
+            Binds: ["/data:/data","/mongodb:/mongodb"],
+            RestartPolicy: {
+              Name: 'unless-stopped'
+            },
+            PortBindings: { "80/tcp": [{ HostPort: "10088" }] },
+            PublishAllPorts: false
+          } 
+        },
+        volumes: []
+      } 
+    ]
+  },
+  {
     appname: 'ownCloud',
     flavor: 'vanilla',
     components: [
