@@ -1,21 +1,5 @@
 [
   {
-    "appname": "busybox",
-    "flavor": "vanilla",
-    "components": [
-      {
-        "name": "busybox",
-        "namespace": "library",
-        "imageLink": "busybox.png",
-        "tag": "latest",
-        "repo": null,
-        "overlay": true,
-        "config": {},
-        "volumes": []
-      }
-    ]
-  },
-  {
     "appname": "fruitmix",
     "flavor": "vanilla",
     "components": [
@@ -38,7 +22,7 @@
             "PortBindings": {
               "80/tcp": [
                 {
-                  "HostPort": "10088"
+                  "HostPort": "80"
                 }
               ]
             },
@@ -83,29 +67,6 @@
     ]
   },
   {
-    "appname": "apache",
-    "flavor": "vanilla",
-    "components": [
-      {
-        "name": "httpd",
-        "namespace": "library",
-        "imageLink": "apache.png",
-        "tag": "latest",
-        "repo": null,
-        "overlay": true,
-        "config": {
-          "HostConfig": {
-            "RestartPolicy": {
-              "Name": "unless-stopped"
-            },
-            "PublishAllPorts": true
-          }
-        },
-        "volumes": []
-      }
-    ]
-  },
-  {
     "appname": "transmission",
     "flavor": "vanilla",
     "components": [
@@ -134,6 +95,45 @@
             "PublishAllPorts": false
           }
         },
+        "volumes": []
+      }
+    ]
+  },
+  {
+    "appname": "apache",
+    "flavor": "vanilla",
+    "components": [
+      {
+        "name": "httpd",
+        "namespace": "library",
+        "imageLink": "apache.png",
+        "tag": "latest",
+        "repo": null,
+        "overlay": true,
+        "config": {
+          "HostConfig": {
+            "RestartPolicy": {
+              "Name": "unless-stopped"
+            },
+            "PublishAllPorts": true
+          }
+        },
+        "volumes": []
+      }
+    ]
+  },
+  {
+    "appname": "busybox",
+    "flavor": "vanilla",
+    "components": [
+      {
+        "name": "busybox",
+        "namespace": "library",
+        "imageLink": "busybox.png",
+        "tag": "latest",
+        "repo": null,
+        "overlay": true,
+        "config": {},
         "volumes": []
       }
     ]

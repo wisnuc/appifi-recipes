@@ -3,22 +3,6 @@
 
 module.exports = [
   {
-    appname: 'busybox',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'busybox',
-        namespace: 'library',
-        imageLink: 'busybox.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {},
-        volumes: []
-      }
-    ]
-  },
-  {
     appname: 'fruitmix',
     flavor: 'vanilla',
     components: [
@@ -35,7 +19,7 @@ module.exports = [
             RestartPolicy: {
               Name: 'unless-stopped'
             },
-            PortBindings: { "80/tcp": [{ HostPort: "10088" }] },
+            PortBindings: { "80/tcp": [{ HostPort: "80" }] },
             PublishAllPorts: false
           } 
         },
@@ -66,6 +50,31 @@ module.exports = [
         },
         volumes: []
       } 
+    ]
+  },
+  {
+    appname: 'transmission',
+    flavor: 'vanilla',
+    components: [
+      {
+        name: 'transmission',
+        namespace: 'dperson',
+        imageLink: 'transmission.png',
+        tag: 'latest',
+        repo: null,
+        overlay: true,
+        config: {
+          HostConfig: {
+            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
+            RestartPolicy: {
+              Name: 'unless-stopped'
+            },
+            PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
+            PublishAllPorts: false
+          }
+        },
+        volumes: []
+      }
     ]
   },
 //   {
@@ -184,26 +193,17 @@ module.exports = [
 //     ]
 //   },
   {
-    appname: 'transmission',
+    appname: 'busybox',
     flavor: 'vanilla',
     components: [
       {
-        name: 'transmission',
-        namespace: 'dperson',
-        imageLink: 'transmission.png',
+        name: 'busybox',
+        namespace: 'library',
+        imageLink: 'busybox.png',
         tag: 'latest',
         repo: null,
         overlay: true,
-        config: {
-          HostConfig: {
-            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            },
-            PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
-            PublishAllPorts: false
-          }
-        },
+        config: {},
         volumes: []
       }
     ]
