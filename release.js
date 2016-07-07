@@ -9,7 +9,7 @@ module.exports = [
       {
         name: 'fruitmix',
         namespace: 'jiangweigithub',
-        imageLink: 'elasticsearch.png',
+        imageLink: 'fruitmix.png',
         tag: 'latest',
         repo: null,
         overlay: true,
