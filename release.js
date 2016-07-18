@@ -8,7 +8,7 @@ module.exports = [
     components: [
       {
         name: 'fruitmix',
-        namespace: 'jiangweigithub',
+        namespace: 'wisnuc',
         imageLink: 'fruitmix.png',
         tag: 'latest',
         repo: null,
@@ -20,31 +20,6 @@ module.exports = [
               Name: 'unless-stopped'
             },
             PortBindings: { "80/tcp": [{ HostPort: "80" }] },
-            PublishAllPorts: false
-          } 
-        },
-        volumes: []
-      } 
-    ]
-  },
-  {
-    appname: 'fruitmix',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'fruitmix',
-        namespace: 'wisnuc',
-        imageLink: 'elasticsearch.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {
-          HostConfig: {
-            Binds: ["/data:/data","/mongodb:/mongodb"],
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            },
-            PortBindings: { "80/tcp": [{ HostPort: "10088" }] },
             PublishAllPorts: false
           } 
         },
