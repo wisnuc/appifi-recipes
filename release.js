@@ -3,54 +3,13 @@
 
 module.exports = [
   {
-    appname: 'busybox',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'busybox',
-        namespace: 'library',
-        imageLink: 'busybox.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {},
-        volumes: []
-      }
-    ]
-  },
-  {
-    appname: 'fruitmix',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'fruitmix',
-        namespace: 'jiangweigithub',
-        imageLink: 'elasticsearch.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {
-          HostConfig: {
-            Binds: ["/data:/data","/mongodb:/mongodb"],
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            },
-            PortBindings: { "80/tcp": [{ HostPort: "10088" }] },
-            PublishAllPorts: false
-          } 
-        },
-        volumes: []
-      } 
-    ]
-  },
-  {
     appname: 'fruitmix',
     flavor: 'vanilla',
     components: [
       {
         name: 'fruitmix',
         namespace: 'wisnuc',
-        imageLink: 'elasticsearch.png',
+        imageLink: 'fruitmix.png',
         tag: 'latest',
         repo: null,
         overlay: true,
@@ -60,12 +19,12 @@ module.exports = [
             RestartPolicy: {
               Name: 'unless-stopped'
             },
-            PortBindings: { "80/tcp": [{ HostPort: "10088" }] },
+            PortBindings: { "80/tcp": [{ HostPort: "80" }] },
             PublishAllPorts: false
-          } 
+          }
         },
         volumes: []
-      } 
+      }
     ]
   },
   {
@@ -87,10 +46,35 @@ module.exports = [
             },
             PortBindings: { "80/tcp": [{ HostPort: "10086" }] },
             PublishAllPorts: false
-          } 
+          }
         },
         volumes: []
-      } 
+      }
+    ]
+  },
+  {
+    appname: 'transmission',
+    flavor: 'vanilla',
+    components: [
+      {
+        name: 'transmission',
+        namespace: 'dperson',
+        imageLink: 'transmission.png',
+        tag: 'latest',
+        repo: null,
+        overlay: true,
+        config: {
+          HostConfig: {
+            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
+            RestartPolicy: {
+              Name: 'unless-stopped'
+            },
+            PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
+            PublishAllPorts: false
+          }
+        },
+        volumes: []
+      }
     ]
   },
 //   {
@@ -138,7 +122,7 @@ module.exports = [
 //         volumes: []
 //       }
 //     ]
-//   }, 
+//   },
   {
     appname: 'apache',
     flavor: 'vanilla',
@@ -158,7 +142,7 @@ module.exports = [
             PublishAllPorts: true
           }
         },
-        volumes: [] 
+        volumes: []
       }
     ]
   },
@@ -183,7 +167,7 @@ module.exports = [
 //         },
 //         volumes: []
 //       }
-//     ]   
+//     ]
 //   },
 //   {
 //     appname: 'redis',
@@ -209,26 +193,17 @@ module.exports = [
 //     ]
 //   },
   {
-    appname: 'transmission',
+    appname: 'busybox',
     flavor: 'vanilla',
     components: [
       {
-        name: 'transmission',
-        namespace: 'dperson',
-        imageLink: 'transmission.png',
+        name: 'busybox',
+        namespace: 'library',
+        imageLink: 'busybox.png',
         tag: 'latest',
         repo: null,
         overlay: true,
-        config: {
-          HostConfig: {
-            Binds: ["/var/lib/transmission-daemon:/var/lib/transmission-daemon"],
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            },
-            PortBindings: { "9091/tcp": [{ HostPort: "9091" }] },
-            PublishAllPorts: false
-          }
-        },
+        config: {},
         volumes: []
       }
     ]
