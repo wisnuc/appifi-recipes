@@ -44,11 +44,11 @@ module.exports = [
     ]
   },
   {
-    appname: 'autobuild-fruitmix',
+    appname: 'fruitmix',
     flavor: 'vanilla',
     components: [
       {
-        name: 'autobuild-fruitmix',
+        name: 'fruitmix',
         namespace: 'wisnuc',
         imageLink: 'elasticsearch.png',
         tag: 'latest',
