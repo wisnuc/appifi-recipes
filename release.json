@@ -14,7 +14,8 @@
           "HostConfig": {
             "Binds": [
               "/data:/data",
-              "/mongodb:/mongodb"
+              "/mongodb:/mongodb",
+              "/var/log/supervisor:/var/log/supervisor"
             ],
             "RestartPolicy": {
               "Name": "unless-stopped"

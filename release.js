@@ -15,16 +15,16 @@ module.exports = [
         overlay: true,
         config: {
           HostConfig: {
-            Binds: ["/data:/data","/mongodb:/mongodb"],
+            Binds: ["/data:/data","/mongodb:/mongodb","/var/log/supervisor:/var/log/supervisor"],
             RestartPolicy: {
               Name: 'unless-stopped'
             },
             PortBindings: { "80/tcp": [{ HostPort: "80" }] },
             PublishAllPorts: false
-          } 
+          }
         },
         volumes: []
-      } 
+      }
     ]
   },
   {
@@ -46,10 +46,10 @@ module.exports = [
             },
             PortBindings: { "80/tcp": [{ HostPort: "10086" }] },
             PublishAllPorts: false
-          } 
+          }
         },
         volumes: []
-      } 
+      }
     ]
   },
   {
@@ -122,7 +122,7 @@ module.exports = [
 //         volumes: []
 //       }
 //     ]
-//   }, 
+//   },
   {
     appname: 'apache',
     flavor: 'vanilla',
@@ -142,7 +142,7 @@ module.exports = [
             PublishAllPorts: true
           }
         },
-        volumes: [] 
+        volumes: []
       }
     ]
   },
@@ -167,7 +167,7 @@ module.exports = [
 //         },
 //         volumes: []
 //       }
-//     ]   
+//     ]
 //   },
 //   {
 //     appname: 'redis',
@@ -255,35 +255,3 @@ module.exports = [
 //     ]
 //   },
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
