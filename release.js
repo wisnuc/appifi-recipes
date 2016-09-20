@@ -146,6 +146,29 @@ module.exports = [
       }
     ]
   },
+  {
+    appname: 'sambad',
+    flavor: 'vanilla',
+    components: [
+      {
+        name: 'sambad',
+        namespace: 'wisnuc',
+        imageLink: 'redis.png',
+        tag: 'latest',
+        repo: null,
+        overlay: true,
+        config: {
+          HostConfig: {
+            RestartPolicy: {
+              Name: 'no'
+            }, 
+            PublishAllPorts: true
+          }
+        },
+        volumes: []
+      }
+    ]
+  },
 //   {
 //     appname: 'solr',
 //     flavor: 'vanilla',
