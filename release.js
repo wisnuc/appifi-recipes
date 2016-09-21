@@ -160,8 +160,14 @@ module.exports = [
         config: {
           HostConfig: {
             RestartPolicy: {
-              Name: 'no'
+              Name: 'unless-stopped'
             }, 
+            PortBindings: { 
+              "137/udp": [{ HostPort: "137" }],
+              "138/udp": [{ HostPort: "138" }],
+              "139/tcp": [{ HostPort: "139" }],
+              "445/tcp": [{ HostPort: "445" }]
+            },
             PublishAllPorts: true
           }
         },
