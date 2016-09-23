@@ -3,31 +3,6 @@
 
 module.exports = [
   {
-    appname: 'fruitmix',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'fruitmix',
-        namespace: 'wisnuc',
-        imageLink: 'fruitmix.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {
-          HostConfig: {
-            Binds: ["/data:/data","/mongodb:/mongodb","/var/log/supervisor:/var/log/supervisor"],
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            },
-            PortBindings: { "80/tcp": [{ HostPort: "80" }] },
-            PublishAllPorts: false
-          }
-        },
-        volumes: []
-      }
-    ]
-  },
-  {
     appname: 'ownCloud',
     flavor: 'vanilla',
     components: [
@@ -147,13 +122,13 @@ module.exports = [
     ]
   },
   {
-    appname: 'sambad',
+    appname: 'samba',
     flavor: 'vanilla',
     components: [
       {
         name: 'sambad',
         namespace: 'wisnuc',
-        imageLink: 'redis.png',
+        imageLink: 'sambad.png',
         tag: 'latest',
         repo: null,
         overlay: true,
