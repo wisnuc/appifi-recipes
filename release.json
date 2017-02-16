@@ -66,13 +66,13 @@
     ]
   },
   {
-    "appname": "apache",
+    "appname": "calibre",
     "flavor": "vanilla",
     "components": [
       {
-        "name": "httpd",
-        "namespace": "library",
-        "imageLink": "apache.png",
+        "name": "docker-rdp-calibre",
+        "namespace": "aptalca",
+        "imageLink": "calibre.png",
         "tag": "latest",
         "repo": null,
         "overlay": true,
@@ -89,13 +89,13 @@
     ]
   },
   {
-    "appname": "samba",
+    "appname": "apache",
     "flavor": "vanilla",
     "components": [
       {
-        "name": "sambad",
-        "namespace": "wisnuc",
-        "imageLink": "sambad.png",
+        "name": "httpd",
+        "namespace": "library",
+        "imageLink": "apache.png",
         "tag": "latest",
         "repo": null,
         "overlay": true,
@@ -103,28 +103,6 @@
           "HostConfig": {
             "RestartPolicy": {
               "Name": "unless-stopped"
-            },
-            "PortBindings": {
-              "137/udp": [
-                {
-                  "HostPort": "137"
-                }
-              ],
-              "138/udp": [
-                {
-                  "HostPort": "138"
-                }
-              ],
-              "139/tcp": [
-                {
-                  "HostPort": "139"
-                }
-              ],
-              "445/tcp": [
-                {
-                  "HostPort": "445"
-                }
-              ]
             },
             "PublishAllPorts": true
           }

@@ -52,29 +52,29 @@ module.exports = [
       }
     ]
   },
-//   {
-//     appname: 'calibre',
-//     flavor: 'vanilla',
-//     components: [
-//       {
-//         name: 'docker-rdp-calibre',
-//         namespace: 'aptalca',
-//         imageLink: 'calibre.png',
-//         tag: 'latest',
-//         repo: null,
-//         overlay: true,
-//         config: {
-//           HostConfig: {
-//             RestartPolicy: {
-//               Name: 'unless-stopped'
-//             },
-//             PublishAllPorts: true
-//           }
-//         },
-//         volumes: []
-//       }
-//     ]
-//   },
+  {
+    appname: 'calibre',
+    flavor: 'vanilla',
+    components: [
+      {
+        name: 'docker-rdp-calibre',
+        namespace: 'aptalca',
+        imageLink: 'calibre.png',
+        tag: 'latest',
+        repo: null,
+        overlay: true,
+        config: {
+          HostConfig: {
+            RestartPolicy: {
+              Name: 'unless-stopped'
+            },
+            PublishAllPorts: true
+          }
+        },
+        volumes: []
+      }
+    ]
+  },
 //   {
 //     appname: 'elasticsearch',
 //     flavor: 'vanilla',
@@ -113,35 +113,6 @@ module.exports = [
           HostConfig: {
             RestartPolicy: {
               Name: 'unless-stopped'
-            },
-            PublishAllPorts: true
-          }
-        },
-        volumes: []
-      }
-    ]
-  },
-  {
-    appname: 'samba',
-    flavor: 'vanilla',
-    components: [
-      {
-        name: 'sambad',
-        namespace: 'wisnuc',
-        imageLink: 'sambad.png',
-        tag: 'latest',
-        repo: null,
-        overlay: true,
-        config: {
-          HostConfig: {
-            RestartPolicy: {
-              Name: 'unless-stopped'
-            }, 
-            PortBindings: { 
-              "137/udp": [{ HostPort: "137" }],
-              "138/udp": [{ HostPort: "138" }],
-              "139/tcp": [{ HostPort: "139" }],
-              "445/tcp": [{ HostPort: "445" }]
             },
             PublishAllPorts: true
           }
