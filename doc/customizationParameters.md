@@ -47,6 +47,31 @@
 ```
 
 ### 参数详细说明
-+ Binds
+
++ HostConfig中的PortBindings参数
+
+  对于tcp和udp,采用/udp和/tcp的方式进行区分,即"22/udp"或者"80/tcp"
+
+
++ HostConfig中的RestartPolicy参数的name子参数
+
+  当容器退出时执行该参数,参数共计3种
+  
+  - always
+  
+    一直重启
+  
+  - unless-stopped
+  
+    只有当用户手工停止该容器,否则一直重启
+  
+  - on-failure
+  
+    当容器退出时的返回值不为0时才会重启
+  
+
++ HostConfig中的Binds参数
+
   - 容器内部目录和外部host环境目录都必须写成绝对路径
-  - 可以增加ro参数使其只读,即"/var/www/html:/var/www/html:ro"
+  
+  - 可以增加ro参数使挂载目录只读,即"/var/www/html:/var/www/html:ro"
