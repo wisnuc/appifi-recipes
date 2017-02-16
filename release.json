@@ -64,5 +64,67 @@
         "volumes": []
       }
     ]
+  },
+  {
+    "appname": "calibre",
+    "flavor": "vanilla",
+    "components": [
+      {
+        "name": "docker-rdp-calibre",
+        "namespace": "aptalca",
+        "imageLink": "calibre.png",
+        "tag": "latest",
+        "repo": null,
+        "overlay": true,
+        "config": {
+          "HostConfig": {
+            "RestartPolicy": {
+              "Name": "unless-stopped"
+            },
+            "PublishAllPorts": true
+          }
+        },
+        "volumes": []
+      }
+    ]
+  },
+  {
+    "appname": "apache",
+    "flavor": "vanilla",
+    "components": [
+      {
+        "name": "httpd",
+        "namespace": "library",
+        "imageLink": "apache.png",
+        "tag": "latest",
+        "repo": null,
+        "overlay": true,
+        "config": {
+          "HostConfig": {
+            "RestartPolicy": {
+              "Name": "unless-stopped"
+            },
+            "PublishAllPorts": true
+          }
+        },
+        "volumes": []
+      }
+    ]
+  },
+  {
+    "appname": "busybox",
+    "flavor": "vanilla",
+    "components": [
+      {
+        "name": "busybox",
+        "namespace": "library",
+        "imageLink": "busybox.png",
+        "tag": "latest",
+        "repo": null,
+        "overlay": true,
+        "config": {},
+        "volumes": []
+      }
+    ]
   }
 ]
