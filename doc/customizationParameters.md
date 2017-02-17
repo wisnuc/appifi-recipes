@@ -108,9 +108,9 @@
     
     备注:<p>
     
-    因为`PortBindings`为空,所以`PublishAllPorts`置为false<p>
+      因为`PortBindings`为空,所以`PublishAllPorts`置为false<p>
     
-    上述信息的获取需要用户了解Dockerfile的相关知识,具体信息请查阅[官方链接](https://docs.docker.com/engine/reference/builder/)<p>
+      上述信息的获取需要用户了解Dockerfile的相关知识,具体信息请查阅[官方链接](https://docs.docker.com/engine/reference/builder/)<p>
     
   - 创建release.js<p>
   
