@@ -1,9 +1,11 @@
 # 自定义参数
 
 ### 简介
-通过修改release.json文件来增加,删除或修改appfi项目中docker市场的软件列表
+
+通过修改release.json文件来增加,删除或修改appfi项目中docker市场的软件列表,该软件列表来源于[*Docker Hub*](https://hub.docker.com/)
 
 ### 格式
+
 ```
 [
   {
@@ -13,7 +15,7 @@
       {
         "name": "owncloud", //dockerhub网站中该镜像的名称
         "namespace": "library", //dockerhub网站中该镜像的命名空间名称
-        "imageLink": "null", //现阶段为固定参数,无需修改
+        "imageLink": "null", //现阶段用户手工指定图片,为固定参数,无需修改
         "tag": "latest", //根据dockerhub网站,指定该镜像采用的标签号
         "repo": null, //现阶段为固定参数,无需修改
         "overlay": true, //现阶段为固定参数,无需修改
@@ -89,9 +91,9 @@
 
 + 选择docker镜像
 
-  - 登录dockerhub网站 [官网链接](https://hub.docker.com/)<p>
+  - 登录dockerhub网站[*官网链接*](https://hub.docker.com/)<p>
   
-    通过搜索或`Explore`选择需要的镜像,这里使用`elasticsearch`镜像 [链接](https://hub.docker.com/_/elasticsearch/)
+    通过搜索或`Explore`选择需要的镜像,这里使用`elasticsearch`镜像[*链接*](https://hub.docker.com/_/elasticsearch/)
     
   - 获取必要的参数信息<p>
   
