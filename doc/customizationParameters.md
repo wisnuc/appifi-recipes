@@ -34,7 +34,7 @@
                 }
               ]
             },
-            "PublishAllPorts": false //如果为false,则上面的`PortBindings`参数生效,为true时,使用Dockerfile中的配置,无需`PortBindings`参数
+            "PublishAllPorts": false //如果为false,则上面的`PortBindings`参数生效,为true时,使用dockerhub网站中的默认值,无需`PortBindings`参数
           }
         },
         "volumes": [] //现阶段为固定参数,无需修改
@@ -51,6 +51,8 @@
 ### 参数详细说明
 
 + HostConfig中的PortBindings参数
+
+  值为true或false,当为true时,说明采用dockerhub项目中的默认配置,用户无需配置该参数;当为false时,说明采用用户自定义配置,dockerhub项目中的默认配置失效
   
   - 当`PublishAllPorts`为false时<p>
   
@@ -79,6 +81,8 @@
   
 
 + HostConfig中的Binds参数
+
+  - 格式为`host-src:container-dest`,前者为运行该docker的host设备的路径(可以根据需要任意修改),后者为docker内部路径(从dockerhub项目中获取到的固定值,不能修改)<p>
 
   - 容器内部目录和外部host环境目录都必须写成绝对路径<p>
   
