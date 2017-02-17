@@ -91,7 +91,7 @@
   - 为了挂载路径的安全性,appifi对host环境目录的路径头部增添额外的路径字段,以transmission为例,具体路径为`/run/wisnuc/volumes/随机uuid/wisnuc/appdata/dockerhub/dperson/transmission/latest/vanilla`,因此,host环境下的挂载点不会从根目录开始,请用户注意<p>
   
 
-### 操作事例
+### 操作事例1 - elasticsearch
 
 + 选择docker镜像
 
@@ -111,6 +111,8 @@
       Binds: null
       PortBindings: null
     ```
+    
+    ![1](https://github.com/wisnuc/appifi-recipes/blob/release/doc/pic/elasticsearch.jpg)<p>
     
     备注:
     
